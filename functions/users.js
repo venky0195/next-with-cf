@@ -4,7 +4,7 @@ export default function handler(request, response) {
     { name: 'siddhi' },
     { name: 'shravani' }
   ];
-
+  console.log(process.env)
   response.status(200).send({
     body: request.body,
     users
