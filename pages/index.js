@@ -1,7 +1,24 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import axios from 'axios';
 
 const inter = Inter({ subsets: ["latin"] });
+
+const buttonOnClick = () =>{
+  axios({
+    method: "POST",
+    url: "/test",
+    data: {
+      text: "dummy value"
+    },
+  })
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}
 
 export default function Home() {
   return (
@@ -113,6 +130,7 @@ export default function Home() {
           </p>
         </a>
       </div>
+      <button onClick={buttonOnClick}>Click me</button>
     </main>
   );
 }
