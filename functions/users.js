@@ -5,6 +5,8 @@ export default function handler(request, response) {
     { name: 'shravani' }
   ];
   console.log(process.env)
+  console.log(process.env.myVar,"MYVAR VALUE")
+
   response.status(200).send({
     body: request.body,
     users
